@@ -3,149 +3,647 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Memory Vault</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Odoo 17 Localizacion — Análisis de Módulos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1f2937;
+            --secondary: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --light-bg: #f9fafb;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+        }
+        .navbar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: white !important;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+        .section {
+            padding: 3rem 0;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 1rem;
+        }
+        .accordion-button {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #eff6ff;
+            color: var(--secondary);
+            box-shadow: none;
+        }
+        .accordion-body {
+            background-color: #fafafa;
+        }
+        .table {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .table thead {
+            background: var(--primary);
+            color: white;
+        }
+        .table-hover tbody tr:hover {
+            background-color: #f3f4f6;
+        }
+        .badge-critical {
+            background-color: var(--danger);
+        }
+        .badge-high {
+            background-color: var(--warning);
+        }
+        .badge-medium {
+            background-color: #3b82f6;
+        }
+        .badge-low {
+            background-color: var(--success);
+        }
+        .category-card {
+            background: white;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+        .category-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .category-meta {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .btn-primary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        .btn-primary:hover {
+            background-color: #2563eb;
+            border-color: #2563eb;
+        }
+        .critical {
+            color: var(--danger);
+            font-weight: 600;
+        }
+        .high {
+            color: var(--warning);
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <h1>📚 Claude Memory Vault</h1>
-            <p class="subtitle" id="subtitle">Memorias Persistentes</p>
+            <a class="navbar-brand" href="#home">📦 Odoo 17 Localizacion</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#overview">Visión General</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#deuda">Deuda Técnica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#search">Búsqueda</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="container">
-        <section class="stats">
-            <div class="stat-item">
-                <span class="stat-number" id="total-count">-</span>
-                <span class="stat-label">Memorias</span>
+    <!-- HERO SECTION -->
+    <div class="hero" id="home">
+        <div class="container">
+            <h1>Análisis Completo de Localización Odoo 17</h1>
+            <p>173 módulos l10n_sv_* auditados y organizados por categoría</p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">173</div>
+                    <div class="stat-label">Módulos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">Categorías</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Tests</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">26%</div>
+                    <div class="stat-label">Coverage</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">16-17</div>
+                    <div class="stat-label">Días Plan</div>
+                </div>
             </div>
-            <div class="stat-item">
-                <span class="stat-label" id="update-time">Cargando...</span>
+        </div>
+    </div>
+
+    <!-- OVERVIEW SECTION -->
+    <section class="section" id="overview">
+        <div class="container">
+            <h2 class="section-title">📊 Visión General</h2>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0">🔴 Problemas Críticos</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>l10n_sv_hr:</strong> 1 test en hub payroll (9 deps) — LEGAL RISK</li>
+                                <li class="mb-2"><strong>Tax reporting:</strong> 14 módulos interdependientes, ciclos circulares</li>
+                                <li class="mb-2"><strong>Operating units:</strong> 8 módulos, 200+ LOC duplicado</li>
+                                <li class="mb-2"><strong>Check printing:</strong> 5 variantes, consolidation candidate</li>
+                                <li><strong>Empty modules:</strong> 7 stubs sin funcionalidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">✅ Oportunidades Quick Wins</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-sm">
+                                <tr>
+                                    <td><strong>Delete stubs</strong></td>
+                                    <td><span class="badge bg-success">1h</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Consolidate checks</strong></td>
+                                    <td><span class="badge bg-success">4h</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Remove empty views</strong></td>
+                                    <td><span class="badge bg-success">6h</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Create helpers</strong></td>
+                                    <td><span class="badge bg-success">3h</span></td>
+                                </tr>
+                                <tr class="fw-bold">
+                                    <td>Total</td>
+                                    <td><span class="badge bg-warning">14 horas</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="search-bar">
-            <input type="text" id="search" placeholder="Buscar memoria...">
-        </section>
+    <!-- CATEGORIAS SECTION -->
+    <section class="section bg-white" id="categorias">
+        <div class="container">
+            <h2 class="section-title">📂 Categorías de Módulos</h2>
 
-        <section class="filters" id="filters"></section>
+            <ul class="nav nav-tabs mb-4" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="critical-tab" data-bs-toggle="tab" data-bs-target="#critical" type="button" role="tab">🔴 Críticas</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="medium-tab" data-bs-toggle="tab" data-bs-target="#medium" type="button" role="tab">🟡 Medianas</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="low-tab" data-bs-toggle="tab" data-bs-target="#low" type="button" role="tab">🟢 Leves</button>
+                </li>
+            </ul>
 
-        <section class="memories-grid" id="memories"></section>
-    </main>
+            <div class="tab-content">
+                <!-- CRITICAL -->
+                <div class="tab-pane fade show active" id="critical" role="tabpanel">
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_edi (15 módulos)</div>
+                        <div class="category-meta">Foundation Layer • Gov Compliance • 6/15 tests (40%)</div>
+                        <div class="mt-2">Facturación electrónica, integración gobierno. <span class="badge badge-critical">CRÍTICA</span></div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_account (58 módulos)</div>
+                        <div class="category-meta">Domain Hub • Financial Core • 33/58 tests (57%)</div>
+                        <div class="mt-2">Accounting core, impuestos, reportes, cheques. <span class="badge badge-critical">CRÍTICA</span></div>
+                    </div>
+                    <div class="category-card" style="border-left-color: #ef4444;">
+                        <div class="category-title critical">⚠️ l10n_sv_hr (21 módulos)</div>
+                        <div class="category-meta">Domain Hub • Payroll • 1/21 tests (5%)</div>
+                        <div class="mt-2">Nómina, deducción legal. <span class="badge badge-critical">CRÍTICA — LEGAL RISK</span></div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_stock (25 módulos)</div>
+                        <div class="category-meta">Operational • Valuation • 2/25 tests (8%)</div>
+                        <div class="mt-2">Inventario, AVCO, costing. <span class="badge badge-high">ALTA</span></div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_utils (26 módulos)</div>
+                        <div class="category-meta">Infrastructure • Operating Units • 0/26 tests (0%)</div>
+                        <div class="mt-2">Multi-tenancy, 200+ LOC duplicado. <span class="badge badge-high">ALTA</span></div>
+                    </div>
+                </div>
 
+                <!-- MEDIUM -->
+                <div class="tab-pane fade" id="medium" role="tabpanel">
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_sale (15 módulos)</div>
+                        <div class="category-meta">Operational • Sales • 1/15 tests (7%)</div>
+                        <div class="mt-2">CRM, sales, descuentos. <span class="badge badge-medium">MEDIA</span></div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_purchase (3 módulos)</div>
+                        <div class="category-meta">Operational • PO • 0/3 tests (0%)</div>
+                        <div class="mt-2">Purchase, custom dates, EDI. <span class="badge badge-medium">MEDIA</span></div>
+                    </div>
+                </div>
+
+                <!-- LOW -->
+                <div class="tab-pane fade" id="low" role="tabpanel">
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_mrp (3 módulos)</div>
+                        <div class="category-meta">Specialized • Manufacturing</div>
+                        <div class="mt-2">BOM, costing. <span class="badge badge-low">BAJA</span></div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_point_of_sale (4 módulos)</div>
+                        <div class="category-meta">Operational • POS</div>
+                        <div class="mt-2">POS integration. <span class="badge badge-low">BAJA</span></div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_website (2 módulos)</div>
+                        <div class="category-meta">Frontend • Website</div>
+                        <div class="mt-2">Website UI. <span class="badge badge-low">BAJA</span></div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-title">l10n_sv_school (1 módulo)</div>
+                        <div class="category-meta">Specialized • Education</div>
+                        <div class="mt-2">Education API. <span class="badge badge-low">BAJA</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEUDA TECNICA SECTION -->
+    <section class="section" id="deuda">
+        <div class="container">
+            <h2 class="section-title">⚡ Deuda Técnica Identificada</h2>
+
+            <div class="accordion" id="debtAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#debt1">
+                            <span class="badge badge-critical me-2">P0</span> Módulos Vacíos (7 stubs)
+                        </button>
+                    </h2>
+                    <div id="debt1" class="accordion-collapse collapse show" data-bs-parent="#debtAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Problema:</strong> 7 módulos sin funcionalidad real.</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Módulo</th>
+                                        <th>Python</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>sale_access_right</td><td>0</td><td>DELETE</td></tr>
+                                    <tr><td>l10n_sv_edi_attachment_downloader</td><td>0</td><td>DELETE</td></tr>
+                                    <tr><td>l10n_sv_pos_invoice</td><td>0</td><td>DELETE</td></tr>
+                                    <tr><td>account_move_change_account</td><td>0</td><td>DELETE</td></tr>
+                                    <tr><td>account_move_change_dates</td><td>1</td><td>DELETE</td></tr>
+                                    <tr><td>pos_discount_validation</td><td>minimal</td><td>DELETE</td></tr>
+                                    <tr><td>config_utils_for_sv</td><td>0</td><td>DELETE</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="mt-3"><strong>Effort:</strong> 1 día | <strong>Impact:</strong> Dead code elimination</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#debt2">
+                            <span class="badge badge-critical me-2">P0</span> Test Coverage Crítica (127 módulos)
+                        </button>
+                    </h2>
+                    <div id="debt2" class="accordion-collapse collapse" data-bs-parent="#debtAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Problema:</strong> 74% de módulos sin tests. Crítico en hubs.</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Módulo</th>
+                                        <th>Tests</th>
+                                        <th>Dependientes</th>
+                                        <th>Risk</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>l10n_sv_hr_payroll</strong></td><td>0</td><td>9</td><td><span class="critical">CRÍTICA</span></td></tr>
+                                    <tr><td><strong>reporte_impuestos_sv</strong></td><td>0</td><td>8</td><td><span class="critical">CRÍTICA</span></td></tr>
+                                    <tr><td><strong>l10n_sv_stock_valuation</strong></td><td>0</td><td>7</td><td>ALTA</td></tr>
+                                    <tr><td>l10n_sv_operating_unit</td><td>0</td><td>8</td><td>ALTA</td></tr>
+                                    <tr><td>l10n_sv_edi_format_sv</td><td>1</td><td>15</td><td>ALTA</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="mt-3"><strong>Effort:</strong> 4-5 días | <strong>Impact:</strong> Legal/compliance protection</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#debt3">
+                            <span class="badge badge-high me-2">P1</span> Duplicación de Código (12%, 850 LOC)
+                        </button>
+                    </h2>
+                    <div id="debt3" class="accordion-collapse collapse" data-bs-parent="#debtAccordion">
+                        <div class="accordion-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Patrón</th>
+                                        <th>Módulos</th>
+                                        <th>LOC Dup</th>
+                                        <th>Fix</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Check printing variants</td><td>5</td><td>79</td><td>1 día</td></tr>
+                                    <tr><td>Operating unit domains</td><td>8</td><td>200</td><td>Mixin 3-5d</td></tr>
+                                    <tr><td>Tax report helpers</td><td>14</td><td>150</td><td>1 día</td></tr>
+                                    <tr><td>Stock valuation</td><td>6</td><td>120</td><td>2 días</td></tr>
+                                    <tr><td>EDI format templates</td><td>9</td><td>180</td><td>2 días</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="mt-3"><strong>Effort:</strong> 5 días | <strong>Impact:</strong> Maintainability</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#debt4">
+                            <span class="badge badge-high me-2">P1</span> Dependencias Circulares (3 ciclos)
+                        </button>
+                    </h2>
+                    <div id="debt4" class="accordion-collapse collapse" data-bs-parent="#debtAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Ciclo 1:</strong> reporte_impuestos ↔ impuestos_sugeridos ↔ valida_reporte</p>
+                            <p><strong>Ciclo 2:</strong> l10n_sv_stock_valuation ↔ account_valuation_sv</p>
+                            <p><strong>Ciclo 3:</strong> [otros]</p>
+                            <p class="mt-3"><strong>Effort:</strong> 3-5 días | <strong>Impact:</strong> Architecture stability</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP SECTION -->
+    <section class="section bg-white" id="roadmap">
+        <div class="container">
+            <h2 class="section-title">🎯 Roadmap de Implementación</h2>
+
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-start border-4" style="border-color: #ef4444;">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0">FASE 1</h5>
+                            <small>Week 1 — 5 días</small>
+                        </div>
+                        <div class="card-body">
+                            <h6>Tests Foundation</h6>
+                            <ul class="small">
+                                <li>Tests l10n_sv_edi</li>
+                                <li>Tests operating_unit</li>
+                                <li>Tests check_printing</li>
+                                <li>Integration tests</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-start border-4" style="border-color: #f59e0b;">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">FASE 2</h5>
+                            <small>Week 2 — 2 días</small>
+                        </div>
+                        <div class="card-body">
+                            <h6>Quick Wins Cleanup</h6>
+                            <ul class="small">
+                                <li>Delete 7 stubs (1h)</li>
+                                <li>Consolidate checks (4h)</li>
+                                <li>Remove views (6h)</li>
+                                <li>Create helpers (3h)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-start border-4" style="border-color: #3b82f6;">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">FASE 3</h5>
+                            <small>Week 3-4 — 5 días</small>
+                        </div>
+                        <div class="card-body">
+                            <h6>Architecture Refactor</h6>
+                            <ul class="small">
+                                <li>OperatingUnitMixin</li>
+                                <li>Break circular deps</li>
+                                <li>Extract helpers</li>
+                                <li>Consolidate duplicates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-start border-4" style="border-color: #10b981;">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">FASE 4</h5>
+                            <small>Month 2+ — 5-7 días</small>
+                        </div>
+                        <div class="card-body">
+                            <h6>SQL → ORM Migration</h6>
+                            <ul class="small">
+                                <li>Audit 406 queries</li>
+                                <li>HIGH-RISK first</li>
+                                <li>Add ORM tests</li>
+                                <li>Documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <strong>Total estimate:</strong> 16-17 días repartidos en Q1-Q3 2026
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH SECTION -->
+    <section class="section" id="search">
+        <div class="container">
+            <h2 class="section-title">🔍 Búsqueda Rápida por Problema</h2>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold">Payroll está roto</div>
+                        <div class="card-body">
+                            <p class="card-text small">Riesgo: CRITICAL (0 tests, legal)</p>
+                            <p class="card-text small">Ver: Categoría l10n_sv_hr</p>
+                            <p class="card-text small">Acción: FASE 1 — Agregar tests</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold">Valuación inconsistente</div>
+                        <div class="card-body">
+                            <p class="card-text small">Riesgo: Circular deps, 0 tests</p>
+                            <p class="card-text small">Ver: Categoría l10n_sv_stock</p>
+                            <p class="card-text small">Acción: FASE 1 — Tests + break deps</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold">Facturación EDI falla</div>
+                        <div class="card-body">
+                            <p class="card-text small">Riesgo: Gov compliance</p>
+                            <p class="card-text small">Ver: Categoría l10n_sv_edi</p>
+                            <p class="card-text small">Acción: FASE 1 — MH integration tests</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold">Data leakage multi-tenancy</div>
+                        <div class="card-body">
+                            <p class="card-text small">Riesgo: Security, 0 tests</p>
+                            <p class="card-text small">Ver: Categoría l10n_sv_utils</p>
+                            <p class="card-text small">Acción: FASE 1 — Multi-tenancy tests</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold">Código duplicado</div>
+                        <div class="card-body">
+                            <p class="card-text small">850 LOC duplicado (12%)</p>
+                            <p class="card-text small">Ver: Deuda Técnica → Duplicación</p>
+                            <p class="card-text small">Acción: FASE 2-3 — Consolidation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold">No sé por dónde empezar</div>
+                        <div class="card-body">
+                            <p class="card-text small">Quick wins: 14 horas, bajo riesgo</p>
+                            <p class="card-text small">Ver: Roadmap → FASE 2</p>
+                            <p class="card-text small">Acción: Empieza eliminando stubs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>📌 <a href="https://github.com/areyesdr/claudemem">GitHub</a> |
-           🏠 <a href="https://github.com/areyesdr/claudemem/tree/main/memories">Memorias</a></p>
-        <p style="font-size: 0.9em; color: #666;" id="footer-info">Auto-generado</p>
+        <div class="container">
+            <p class="mb-2"><strong>Odoo 17 Localizacion Analysis</strong></p>
+            <p class="small mb-0">
+                Análisis generado: 2026-07-10 | Memorias:
+                <a href="https://github.com/areyesdr/claudemem" style="color: #93c5fd;">github.com/areyesdr/claudemem</a>
+            </p>
+            <p class="small">
+                Generado por caveman:cavecrew-investigator + odoo-project-lead
+            </p>
+        </div>
     </footer>
 
-    <script>
-        // Carga dinámica desde memories.json
-        let allMemories = [];
-        let currentFilter = '*';
-
-        async function loadMemories() {
-            try {
-                const res = await fetch('memories.json');
-                allMemories = await res.json();
-                render();
-            } catch (e) {
-                console.error('Error cargando memories.json:', e);
-            }
-        }
-
-        function getUniqueProjects() {
-            return ['*', ...new Set(allMemories.map(m => m.project))];
-        }
-
-        function getTypeColors() {
-            return new Map([
-                ['◆ Proyecto', '#7c3aed'],
-                ['● Bug', '#dc2626'],
-                ['⚖ Feedback', '#d97706'],
-                ['📋 Referencia', '#1e40af'],
-                ['↻ Workflow', '#059669']
-            ]);
-        }
-
-        function renderFilters() {
-            const container = document.getElementById('filters');
-            const projects = getUniqueProjects();
-
-            container.innerHTML = projects.map(proj => `
-                <button class="filter-btn ${proj === '*' ? 'active' : ''}"
-                        data-filter="${proj}">
-                    ${proj === '*' ? 'Todos' : proj}
-                </button>
-            `).join('');
-
-            container.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    currentFilter = btn.dataset.filter;
-                    renderCards();
-                });
-            });
-        }
-
-        function renderCards() {
-            const container = document.getElementById('memories');
-            const query = document.getElementById('search').value.toLowerCase();
-
-            const filtered = allMemories.filter(m => {
-                const matchesSearch = m.title.toLowerCase().includes(query) ||
-                                     m.desc.toLowerCase().includes(query);
-                const matchesFilter = currentFilter === '*' || m.project === currentFilter;
-                return matchesSearch && matchesFilter;
-            });
-
-            container.innerHTML = filtered.map(m => `
-                <article class="memory-card" data-id="${m.id}" data-project="${m.project}">
-                    <div class="card-header">
-                        <span class="type-badge">${m.type}</span>
-                        <span class="project-tag">${m.project}</span>
-                        <span class="card-date">${m.date}</span>
-                    </div>
-                    <h3 class="card-title">${escapeHtml(m.title)}</h3>
-                    <p class="card-desc">${escapeHtml(m.desc)}</p>
-                    <footer class="card-footer">
-                        <a href="#" class="card-link">Ver detalles →</a>
-                    </footer>
-                </article>
-            `).join('');
-        }
-
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-
-        function render() {
-            // Stats
-            document.getElementById('total-count').textContent = allMemories.length;
-            document.getElementById('update-time').textContent =
-                `Actualizado: ${new Date().toLocaleDateString()}`;
-
-            // Subtitle dinámico
-            const projCount = new Set(allMemories.map(m => m.project)).size;
-            document.getElementById('subtitle').textContent =
-                `${allMemories.length} memorias de ${projCount} proyecto(s)`;
-
-            // Filtros dinámicos
-            renderFilters();
-
-            // Cards
-            renderCards();
-
-            // Search
-            document.getElementById('search').addEventListener('input', renderCards);
-        }
-
-        // Load al abrir
-        loadMemories();
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
