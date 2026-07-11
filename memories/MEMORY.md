@@ -39,3 +39,4 @@
 - [Claudemem GitHub Setup](project_claudemem_github_setup.md) — 2026-07-10: Repo GitHub (areyesdr/claudemem) con memorias persistentes - sync local/restore en máquina nueva, scripts automation
 - [Localizacion Structure Complete](project_localizacion_structure_complete.md) — 2026-07-10: 173 módulos l10n_sv_* en 4 capas arquitectónicas, 56% interdependencias internas, 26% coverage tests, 7 módulos vacíos, candidates consolidación
 - [Localizacion Technical Debt Audit](project_localizacion_technical_debt_audit.md) — 2026-07-10: 10 issues críticas: 7 módulos vacíos, 3 ciclos circulares, 12% duplicación código, 74% sin tests, roadmap 16-17 días Q1-Q3
+- [Localizacion Technical Detalles Implementation](project_localizacion_technical_detalles_implementation.md) — 2026-07-10: 4 antipatrones Odoo detectados, 4 quick wins (14h), plan 4-fases refactoring, módulos críticos 0-tests (5 compliance/gov)
