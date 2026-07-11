@@ -1,0 +1,21 @@
+# Local config
+.env
+.env.local
+*.local
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+
+# Archivos temporales
+*.tmp
+*.bak
+.backup/

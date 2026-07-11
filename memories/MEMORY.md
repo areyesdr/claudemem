@@ -1,0 +1,38 @@
+- [📋 Workflow: Documentación en Commits](workflow_commit_documentation.md) — **OBLIGATORIO**: Antes de cada commit, actualizar README módulo + repo, incrementar versión
+- [Vault como histórico](feedback_vault_as_memory.md) — Siempre consultar el vault de Obsidian para contexto histórico del proyecto
+- [Git Workflow Rules](git_workflow_rules.md) — **CRÍTICO**: Git es SOLO lectura, nunca hacer commits/push automáticos
+- [Skill Odoo SV Dev](project_odoo_sv_dev_skill.md) — Skill creada en ~/.claude/skills/odoo-sv-dev/ con patrones de l10n_sv_edi v17.10.29
+- [Módulo l10n_sv_dte](project_l10n_sv_dte.md) — Nuevo módulo DTE El Salvador en /l10n_sv_edi/l10n_sv_dte/, reemplaza l10n_sv_edi con arquitectura modular
+- [sync_amigopos Status](project_sync_amigopos_status.md) — MO→Picking→Factura workflow reparado, auditorías implementadas, testing documentado (2026-04-28)
+- [sync_amigopos Baseline](project_sync_amigopos_baseline.md) — v17.0.1.1 congelado 2026-04-29: 43 modelos, 25 controladores, 3 wizards, log_buffer, workflow congelado
+- [Unique Codigo Fix](project_unique_codigo_generacion.md) — Solución 2026-04-29: búsqueda previa de duplicados + validación de write
+- [Invoice Batch v2](project_sync_invoice_batch_v2.md) — Option 2 implementada 2026-04-30: batch 50 órdenes + SELECT FOR UPDATE (3-4x más rápido, 0% errores)
+- [SQL Multiple Queries Fix](project_sql_multiple_queries_fix.md) — 2026-04-30: PostgreSQL no permite múltiples sentencias en execute(), separadas 4 UPDATE en _force_picking_dates_sql_massive()
+- [MO & PICKING Optimization](project_mo_picking_optimization.md) — 2026-04-30: Reintentos exponenciales (MAX=10/15), sleep exponencial (1.0-1.5s), orden cronológica/profundidad
+- [Code Documentation SE USA EN](project_code_documentation_se_usa_en.md) — 2026-04-30: 25+ funciones documentadas con comentarios "SE USA EN" para navegación rápida
+- [Orquestador Secuencial](project_orquestador_secuencial.md) — 2026-04-30: Reescritura maestro cron con 7 loops while, garantía de precedencias, eliminación cuarentena invisible
+- [SQL Indexes Fixed](bugs_sql_indexes_optimized.md) — 2026-04-30: Script SQL_INDEXES_OPTIMIZED.sql tenía 4 errores (tabla/columna/query), corregidos en SQL_INDEXES_OPTIMIZED_FIXED.sql
+- [Mail Followers Duplicate](bugs_mail_followers_duplicate.md) — 2026-04-30: FASE-2 fallaba confirmando órdenes (constraint unique), fix: limpieza SQL de followers duplicados pre-confirm
+- [Domain Helper Consolidation](project_domain_helper_consolidation.md) — 2026-04-30: Implementado `_build_search_domain()`, elimina redeclaraciones de domain (44% reducción en cron_process_syncap_orders)
+- [Loop Consolidation](project_loop_consolidation.md) — 2026-04-30: Implementado `_process_phase()`, FASES 2,4,5,7 refactorizadas (33% reducción c/u, 16 líneas netas eliminadas)
+- [Query MH from Invoice](project_query_mh_invoice.md) — 2026-04-30: Funciones `_fetch_mh_seal()` y `action_query_mh()` en l10n_sv_edi/account_move.py + botón en vista XML
+- [bi_bulk_confirm_and_cancel](reference_bi_bulk_confirm_and_cancel.md) — Módulo utilidad BrowseInfo: bulk confirm/cancel para SO, PO, MO. 4 bugs detectados (validación tardía, lógica débil, sin transaccionalidad)
+- [bi_bulk_advanced_confirm](project_bi_bulk_advanced_confirm.md) — Módulo nuevo 2026-05-03: bulk confirm real con auto-fill BOM (MO), force-validate picking (sin stock)
+- [sync_amigopos Integridad Final](project_sync_amigopos_integridad_final_20260503.md) — 2026-05-03: 7 cambios (picking vinculation, discount audit, user_id, A/R account, payment_term, cron cleanup, cortesías validation) = 100% integridad + trazabilidad + compliance
+- [Bulk Operations Integradas](project_sync_amigopos_bulk_operations_20260503.md) — 2026-05-03: Lógica de l10n_sv_bulk_confirm_orders integrada en sync_amigopos sin wizard + botones en UI
+- [Dashboard Bus Optimization](project_dashboard_bus_optimization.md) — 2026-05-04: Log buffer memory-only + cards via bus con validación de rango (respeta fechas/branches)
+- [Picking State Dancing Fix](bugs_picking_state_dancing_20260504.md) — **CRÍTICO** 2026-05-04: Orden saltando entre estados FASE 4, fix: verificar pickings realmente done antes de cambiar estado
+- [Fast-Track Observabilidad](bugs_cron_fast_track_observabilidad.md) — 2026-05-04: cron_fast_track_invoices mejorado: write() correcto, logs detallados (idx/total), commits inmediatos, contadores de resultado
+- [Order Form Redesign](project_order_form_redesign_20260504.md) — 2026-05-04: Vista order_views.xml rediseñada con 5 secciones visuales, cajas coloreadas, mejor jerarquía, 40+ campos organizados
+- [MH Seal Unification](project_mh_seal_unification_20260505.md) — 2026-05-05: Fusión `_fetch_mh_seal_syncap` + `action_query_mh_syncap` → una sola función, integración en flujo de creación de facturas
+- [libro_iva_count Fix](bugs_libro_iva_count_fix_20260507.md) — 2026-05-07: Count "amarrado" en borrador, solucionado con filtro estado + cache invalidation
+- [Necesidades Producción Grouping](project_obtener_necesidades_sucursal_20260507.md) — 2026-05-07: `obtener_necesidades_del_dia()` refactorizada para agrupar por (sucursal, producto) con retorno estructurado por sucursal
+- [Cleanup Invoices Fast-Track](project_action_cleanup_invoices_fast_track.md) — 2026-05-13: `action_cleanup_bad_invoices_only()` soporta órdenes sin SO y used_fast_track=True
+- [Propinas Omitidas en SO](bugs_syncap_order_line_tips_missing.md) — 2026-05-13: Bug en cron_process_syncap_orders_line: dominio no incluía is_tip/is_discount
+- [Bar Menu Views Completas](project_syncap_bar_menu_views_enhanced.md) — 2026-05-13: Search, Form y Tree views mejoradas siguiendo estándares de product_views.xml
+- [Sync Running State Integration](project_sync_state_running_20260513.md) — 2026-05-13: syncap_sync_running gestión en 4 crons (inteligente: False solo si 0 pendientes), correcciones en controlador
+- [Reset Order SQL Column Fix](bugs_reset_order_sql_column_fix.md) — 2026-05-14: reset_order() fallaba por TicketID (mayúsculas) vs ticketid (minúsculas) - 3 sentencias corregidas
+- [Fast-Track Memory Error Fix](bugs_fast_track_memory_error.md) — 2026-05-19: MemoryError después de ~230 órdenes. Fix: cache.clear() cada 50 órdenes + post-commit + prefetch_fields=False
+- [Fast-Track Memory Error v2](bugs_memory_error_fast_track_v2.md) — 2026-05-19: Optimizaciones v2 = Pre-carga SQL facturas (1 query vs 160+) + limpieza cada 5 + batch_size 50
+- [wkhtmlt2pdf_batch Fix](project_wkhtmlt2pdf_batch_fix.md) — 2026-05-19: Corrección integración con account_reports: heredar de account.report.export_to_pdf() + chunks por cuentas
+- [PO Reverse Custom Date](project_po_reverse_custom_date.md) — 2026-07-10: Fecha personalizada en compra inversa para casos mercancía llega antes/después de factura (3 prioridades, validación AVCO, logging auditoría)
