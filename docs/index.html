@@ -255,6 +255,91 @@
         strong {
             color: var(--text-primary);
         }
+        /* Bootstrap overrides */
+        .bg-primary, .bg-success, .bg-warning, .bg-danger, .bg-info {
+            background-color: var(--dark-surface) !important;
+            border: 1px solid var(--dark-border);
+        }
+        .text-white {
+            color: var(--text-primary) !important;
+        }
+        .text-dark {
+            color: var(--text-primary) !important;
+        }
+        .alert {
+            background-color: var(--dark-surface);
+            border: 1px solid var(--dark-border);
+            color: var(--text-primary);
+        }
+        .alert-info {
+            border-color: var(--accent-subtle);
+            color: var(--accent);
+        }
+        .nav-tabs {
+            border-bottom-color: var(--dark-border);
+        }
+        .nav-tabs .nav-link {
+            color: var(--text-secondary);
+            border: 1px solid transparent;
+        }
+        .nav-tabs .nav-link:hover {
+            border-color: var(--dark-border);
+            color: var(--accent);
+        }
+        .nav-tabs .nav-link.active {
+            background-color: var(--dark-surface);
+            border-color: var(--dark-border) var(--dark-border) var(--dark-bg);
+            color: var(--accent);
+        }
+        .collapse:not(.show) {
+            display: none;
+        }
+        .list-unstyled li {
+            color: var(--text-primary);
+        }
+        .border-start {
+            border-color: var(--dark-border) !important;
+        }
+        .border-4 {
+            border-color: var(--accent) !important;
+        }
+        .row > * {
+            color: var(--text-primary);
+        }
+        .container > * {
+            color: var(--text-primary);
+        }
+        p, li, ul, ol {
+            color: var(--text-primary);
+        }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--text-primary);
+        }
+        .fw-bold {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .text-center {
+            color: var(--text-primary);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-primary);
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        .mb-2, .mb-3, .mb-4 {
+            margin-bottom: 0.5rem;
+        }
+        /* Sticky navbar fix */
+        .sticky-top {
+            background-color: var(--dark-surface);
+            border-bottom: 1px solid var(--dark-border);
+        }
     </style>
 </head>
 <body>
