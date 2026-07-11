@@ -40,3 +40,17 @@
 - [Localizacion Structure Complete](project_localizacion_structure_complete.md) — 2026-07-10: 173 módulos l10n_sv_* en 4 capas arquitectónicas, 56% interdependencias internas, 26% coverage tests, 7 módulos vacíos, candidates consolidación
 - [Localizacion Technical Debt Audit](project_localizacion_technical_debt_audit.md) — 2026-07-10: 10 issues críticas: 7 módulos vacíos, 3 ciclos circulares, 12% duplicación código, 74% sin tests, roadmap 16-17 días Q1-Q3
 - [Localizacion Technical Detalles Implementation](project_localizacion_technical_detalles_implementation.md) — 2026-07-10: 4 antipatrones Odoo detectados, 4 quick wins (14h), plan 4-fases refactoring, módulos críticos 0-tests (5 compliance/gov)
+
+## Categorías de Módulos (11 archivos)
+
+- [Categoría l10n_sv_edi](category_l10n_sv_edi.md) — 15 módulos, foundation layer, facturación electrónica gobierno, 6 tests (INSUFFICIENT)
+- [Categoría l10n_sv_account](category_l10n_sv_account.md) — 58 módulos, hub central impuestos/reportes, 33 tests, check printing consolidation
+- [Categoría l10n_sv_hr](category_l10n_sv_hr.md) — 21 módulos, payroll hub, 1 test (CRITICAL GAP), riesgo legal
+- [Categoría l10n_sv_stock](category_l10n_sv_stock.md) — 25 módulos, valuación AVCO/FIFO, circular deps, 2 tests
+- [Categoría l10n_sv_utils](category_l10n_sv_utils.md) — 26 módulos, operating units (8 dup 200 LOC), infraestructura, 0 tests multi-tenancy
+- [Categoría l10n_sv_sale](category_l10n_sv_sale.md) — 15 módulos, CRM + sales, 1 test, descuentos
+- [Categoría l10n_sv_purchase](category_l10n_sv_purchase.md) — 3 módulos, PO + EDI, 0 tests, custom date logic
+- [Categoría l10n_sv_mrp](category_l10n_sv_mrp.md) — 3 módulos, manufactura + BOM, 0 tests, low priority
+- [Categoría l10n_sv_point_of_sale](category_l10n_sv_point_of_sale.md) — 4 módulos, POS, 0 tests, stub para eliminar
+- [Categoría l10n_sv_website](category_l10n_sv_website.md) — 2 módulos, website UI, 0 tests, low priority
+- [Categoría l10n_sv_school](category_l10n_sv_school.md) — 1 módulo, educación API, 0 tests, low priority
