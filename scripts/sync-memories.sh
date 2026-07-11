@@ -34,6 +34,13 @@ echo "✅ Copiadas $file_count memorias"
 # Ir a directorio repo
 cd "$SCRIPT_DIR"
 
+# Asegurar que remoto usa SSH (no HTTPS)
+if git remote -v | grep -q "https://github.com"; then
+    echo ""
+    echo "🔧 Actualizando remoto a SSH..."
+    git remote set-url origin git@github.com:areyesdr/claudemem.git
+fi
+
 # Verificar estado git
 echo ""
 echo "🔍 Estado git..."
