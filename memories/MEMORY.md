@@ -37,3 +37,5 @@
 - [wkhtmlt2pdf_batch Fix](project_wkhtmlt2pdf_batch_fix.md) — 2026-05-19: Corrección integración con account_reports: heredar de account.report.export_to_pdf() + chunks por cuentas
 - [PO Reverse Custom Date](project_po_reverse_custom_date.md) — 2026-07-10: Fecha personalizada en compra inversa para casos mercancía llega antes/después de factura (3 prioridades, validación AVCO, logging auditoría)
 - [Claudemem GitHub Setup](project_claudemem_github_setup.md) — 2026-07-10: Repo GitHub (areyesdr/claudemem) con memorias persistentes - sync local/restore en máquina nueva, scripts automation
+- [Localizacion Structure Complete](project_localizacion_structure_complete.md) — 2026-07-10: 173 módulos l10n_sv_* en 4 capas arquitectónicas, 56% interdependencias internas, 26% coverage tests, 7 módulos vacíos, candidates consolidación
+- [Localizacion Technical Debt Audit](project_localizacion_technical_debt_audit.md) — 2026-07-10: 10 issues críticas: 7 módulos vacíos, 3 ciclos circulares, 12% duplicación código, 74% sin tests, roadmap 16-17 días Q1-Q3
