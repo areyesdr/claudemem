@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odoo 17 Localizacion — Diario de Trabajo</title>
+    <title>Proyectos Odoo — Memorias Centrales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -188,17 +188,16 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">📔 Odoo 17 Localizacion</a>
+            <a class="navbar-brand" href="#home">📚 Memorias Odoo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#diario">Diario</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cambios">Cambios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
                     <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#decisiones">Decisiones</a></li>
                 </ul>
             </div>
         </div>
@@ -207,72 +206,162 @@
     <!-- HERO SECTION -->
     <div class="hero" id="home">
         <div class="container">
-            <h1>Odoo 17 Localizacion — Diario de Trabajo</h1>
-            <p>173 módulos l10n_sv_* — Control, historial y roadmap de implementación</p>
+            <h1>Memorias de Proyectos Odoo</h1>
+            <p>Diario centralizado — Control de cambios, decisiones y roadmaps</p>
 
             <div class="stats">
                 <div class="stat-card">
-                    <div class="stat-number">173</div>
-                    <div class="stat-label">Módulos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">11</div>
-                    <div class="stat-label">Categorías</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">10</div>
-                    <div class="stat-label">Decisiones</div>
-                </div>
-                <div class="stat-card">
                     <div class="stat-number">4</div>
-                    <div class="stat-label">FASES</div>
+                    <div class="stat-label">Versiones Odoo</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">19</div>
-                    <div class="stat-label">Días Plan</div>
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Proyectos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">54</div>
+                    <div class="stat-label">Archivos Memoria</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Sesiones Log</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Sincronizado</div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- PROYECTOS SECTION -->
+    <section class="section bg-white" id="proyectos">
+        <div class="container">
+            <h2 class="section-title">📂 Proyectos Activos</h2>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white fw-bold">Odoo 16 Localizacion</div>
+                        <div class="card-body">
+                            <p class="small">Localización El Salvador v16</p>
+                            <ul class="small">
+                                <li>vault16/</li>
+                                <li>~50 módulos</li>
+                                <li>Baseline establecido</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white fw-bold">Odoo 17 Localizacion</div>
+                        <div class="card-body">
+                            <p class="small">Localización El Salvador v17 — ACTIVO</p>
+                            <ul class="small">
+                                <li>173 módulos l10n_sv_*</li>
+                                <li>11 categorías</li>
+                                <li>FASE 1 planificada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-info text-white fw-bold">Odoo 18 Localizacion</div>
+                        <div class="card-body">
+                            <p class="small">Localización El Salvador v18</p>
+                            <ul class="small">
+                                <li>vault18/</li>
+                                <li>Planeado</li>
+                                <li>Roadmap Q2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning text-dark fw-bold">sync_amigopos</div>
+                        <div class="card-body">
+                            <p class="small">Integración Amigo POS → Odoo</p>
+                            <ul class="small">
+                                <li>43 modelos, 25 controladores</li>
+                                <li>v17.0.1.1 congelado (2026-04-29)</li>
+                                <li>MO→Picking→Invoice workflow</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-danger text-white fw-bold">Odoo 19 Localizacion</div>
+                        <div class="card-body">
+                            <p class="small">Localización El Salvador v19</p>
+                            <ul class="small">
+                                <li>vault19/</li>
+                                <li>Futuro</li>
+                                <li>Roadmap Q3-Q4</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- DIARIO SECTION -->
     <section class="section" id="diario">
         <div class="container">
-            <h2 class="section-title">📔 Diario de Sesiones</h2>
+            <h2 class="section-title">📔 Diario Reciente (Últimas Sesiones)</h2>
 
             <div class="log-entry">
-                <div class="log-date">2026-07-10</div>
-                <div class="log-title">Sesión 1: Análisis Completo de 173 Módulos</div>
-                <div class="log-meta">Exploración → Mapeo → Documentación</div>
+                <div class="log-date">2026-07-11</div>
+                <div class="log-title">Odoo 17: Restructuración de Memoria (Diary Format)</div>
+                <div class="log-meta">Proyecto: Odoo 17 Localizacion</div>
                 <div class="mt-2">
-                    <p><strong>Objetivo:</strong> Mapear estructura de 173 módulos l10n_sv_*</p>
-                    <p><strong>Acciones:</strong></p>
-                    <ul>
-                        <li>Exploración con caveman:cavecrew-investigator (173 modules → 11 categories)</li>
-                        <li>Auditoría con odoo-project-lead (10 issues, 4-FASE plan)</li>
-                        <li>Documentación: 14 archivos de memoria + 2 notas Obsidian</li>
-                        <li>Landing page bootstrap + GitHub Pages</li>
-                        <li>Sync a claudemem repository</li>
-                    </ul>
-                    <p><strong>Métricas:</strong> 173 módulos analizados, 11 categorías, 45 tests (26%), 850 LOC duplicado</p>
+                    <p><strong>Archivos creados:</strong> DIARIO.md, CHANGELOG.md, DECISIONES.md, TODO.md</p>
+                    <p><strong>Cambio estratégico:</strong> De auditoría de problemas → diario de control y cambios</p>
                 </div>
             </div>
 
             <div class="log-entry">
-                <div class="log-date">2026-07-11</div>
-                <div class="log-title">Sesión 2: Restructuración de Memoria (Diary Format)</div>
-                <div class="log-meta">Control + Historial → Diario + Changelog + Decisiones + TODO</div>
+                <div class="log-date">2026-07-10</div>
+                <div class="log-title">Odoo 17: Análisis Completo de 173 Módulos</div>
+                <div class="log-meta">Proyecto: Odoo 17 Localizacion</div>
                 <div class="mt-2">
-                    <p><strong>Objetivo:</strong> Reorganizar memoria como diary de trabajo, no auditoría de problemas</p>
-                    <p><strong>Archivos creados:</strong></p>
-                    <ul>
-                        <li>DIARIO.md — Log de sesiones (qué se hizo, hallazgos)</li>
-                        <li>CHANGELOG.md — Historial de cambios por fecha/categoría</li>
-                        <li>DECISIONES.md — 10 decisiones arquitectónicas con contexto e impacto</li>
-                        <li>TODO.md — FASE 1-4 roadmap con tareas checklist</li>
-                    </ul>
-                    <p><strong>GitHub Sync:</strong> Commit 1527fca pushed → https://github.com/areyesdr/claudemem</p>
+                    <p><strong>Mapeo:</strong> 173 módulos → 11 categorías, 4 capas arquitectónicas</p>
+                    <p><strong>Documentación:</strong> 14 archivos memoria + 2 notas Obsidian + landing page bootstrap</p>
                 </div>
+            </div>
+
+            <div class="log-entry">
+                <div class="log-date">2026-05-03</div>
+                <div class="log-title">sync_amigopos: Integridad Final + Bulk Operations</div>
+                <div class="log-meta">Proyecto: sync_amigopos</div>
+                <div class="mt-2">
+                    <p><strong>Cambios:</strong> 7 correcciones (picking vinculation, discount audit, payment_term, etc.)</p>
+                    <p><strong>Resultado:</strong> 100% integridad + trazabilidad + compliance</p>
+                </div>
+            </div>
+
+            <div class="log-entry">
+                <div class="log-date">2026-05-04</div>
+                <div class="log-title">sync_amigopos: Dashboard Bus Optimization</div>
+                <div class="log-meta">Proyecto: sync_amigopos</div>
+                <div class="mt-2">
+                    <p><strong>Optimización:</strong> Log buffer memory-only + cards via bus con validación de rango</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <p class="text-muted small">Ver memorias completas en GitHub:
+                    <a href="https://github.com/areyesdr/claudemem/tree/main/memories">
+                        claudemem/memories
+                    </a>
+                </p>
             </div>
         </div>
     </section>
@@ -349,7 +438,7 @@
     <!-- CATEGORIAS SECTION -->
     <section class="section" id="categorias">
         <div class="container">
-            <h2 class="section-title">📂 Categorías de Módulos</h2>
+            <h2 class="section-title">📂 Odoo 17: Categorías de Módulos (173 módulos l10n_sv_*)</h2>
 
             <ul class="nav nav-tabs mb-4" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -437,7 +526,7 @@
     <!-- ROADMAP SECTION -->
     <section class="section bg-white" id="roadmap">
         <div class="container">
-            <h2 class="section-title">🎯 Roadmap de Implementación (FASE 1-4)</h2>
+            <h2 class="section-title">🎯 Odoo 17: Roadmap de Implementación (FASE 1-4, 19 días)</h2>
 
             <div class="row">
                 <div class="col-md-3 mb-4">
@@ -522,7 +611,7 @@
     <!-- DECISIONES SECTION -->
     <section class="section" id="decisiones">
         <div class="container">
-            <h2 class="section-title">🎯 Decisiones Arquitectónicas</h2>
+            <h2 class="section-title">🎯 Odoo 17: Decisiones Arquitectónicas (10 decisiones)</h2>
 
             <div class="accordion" id="decisionsAccordion">
                 <div class="accordion-item">
@@ -591,18 +680,21 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p class="mb-2"><strong>Odoo 17 Localizacion — Diario de Trabajo</strong></p>
+            <p class="mb-2"><strong>Memorias Centrales de Proyectos Odoo</strong></p>
             <p class="small mb-0">
-                Memorias:
-                <a href="https://github.com/areyesdr/claudemem/tree/main/memories" style="color: #93c5fd;">
-                    github.com/areyesdr/claudemem/memories
+                GitHub:
+                <a href="https://github.com/areyesdr/claudemem" style="color: #93c5fd;">
+                    github.com/areyesdr/claudemem
                 </a>
             </p>
             <p class="small mb-0">
-                Archivos: DIARIO.md • CHANGELOG.md • DECISIONES.md • TODO.md • INDEX.md
+                Proyectos: Odoo 16, 17, 18, 19 • sync_amigopos
+            </p>
+            <p class="small mb-0">
+                Versión: v1.0 | Memorias: 54 archivos | Sesiones: 50+ | Último sync: 2026-07-11
             </p>
             <p class="small">
-                Actualizado: 2026-07-11 | Sesiones: 2 | Commits: 1527fca
+                Diario de trabajo — Control + Historial + Decisiones + Roadmap
             </p>
         </div>
     </footer>
