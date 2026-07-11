@@ -36,3 +36,4 @@
 - [Fast-Track Memory Error v2](bugs_memory_error_fast_track_v2.md) — 2026-05-19: Optimizaciones v2 = Pre-carga SQL facturas (1 query vs 160+) + limpieza cada 5 + batch_size 50
 - [wkhtmlt2pdf_batch Fix](project_wkhtmlt2pdf_batch_fix.md) — 2026-05-19: Corrección integración con account_reports: heredar de account.report.export_to_pdf() + chunks por cuentas
 - [PO Reverse Custom Date](project_po_reverse_custom_date.md) — 2026-07-10: Fecha personalizada en compra inversa para casos mercancía llega antes/después de factura (3 prioridades, validación AVCO, logging auditoría)
+- [Claudemem GitHub Setup](project_claudemem_github_setup.md) — 2026-07-10: Repo GitHub (areyesdr/claudemem) con memorias persistentes - sync local/restore en máquina nueva, scripts automation
