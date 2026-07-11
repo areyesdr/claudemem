@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odoo 17 Localizacion — Análisis de Módulos</title>
+    <title>Odoo 17 Localizacion — Diario de Trabajo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -136,6 +136,29 @@
             font-size: 0.85rem;
             color: #6b7280;
         }
+        .log-entry {
+            background: white;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .log-date {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .log-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .log-meta {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
         .footer {
             background: var(--primary);
             color: white;
@@ -165,17 +188,17 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">📦 Odoo 17 Localizacion</a>
+            <a class="navbar-brand" href="#home">📔 Odoo 17 Localizacion</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#overview">Visión General</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#diario">Diario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cambios">Cambios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#deuda">Deuda Técnica</a></li>
                     <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#search">Búsqueda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#decisiones">Decisiones</a></li>
                 </ul>
             </div>
         </div>
@@ -184,8 +207,8 @@
     <!-- HERO SECTION -->
     <div class="hero" id="home">
         <div class="container">
-            <h1>Análisis Completo de Localización Odoo 17</h1>
-            <p>173 módulos l10n_sv_* auditados y organizados por categoría</p>
+            <h1>Odoo 17 Localizacion — Diario de Trabajo</h1>
+            <p>173 módulos l10n_sv_* — Control, historial y roadmap de implementación</p>
 
             <div class="stats">
                 <div class="stat-card">
@@ -197,71 +220,125 @@
                     <div class="stat-label">Categorías</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">45</div>
-                    <div class="stat-label">Tests</div>
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Decisiones</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">26%</div>
-                    <div class="stat-label">Coverage</div>
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">FASES</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">16-17</div>
+                    <div class="stat-number">19</div>
                     <div class="stat-label">Días Plan</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- OVERVIEW SECTION -->
-    <section class="section" id="overview">
+    <!-- DIARIO SECTION -->
+    <section class="section" id="diario">
         <div class="container">
-            <h2 class="section-title">📊 Visión General</h2>
+            <h2 class="section-title">📔 Diario de Sesiones</h2>
+
+            <div class="log-entry">
+                <div class="log-date">2026-07-10</div>
+                <div class="log-title">Sesión 1: Análisis Completo de 173 Módulos</div>
+                <div class="log-meta">Exploración → Mapeo → Documentación</div>
+                <div class="mt-2">
+                    <p><strong>Objetivo:</strong> Mapear estructura de 173 módulos l10n_sv_*</p>
+                    <p><strong>Acciones:</strong></p>
+                    <ul>
+                        <li>Exploración con caveman:cavecrew-investigator (173 modules → 11 categories)</li>
+                        <li>Auditoría con odoo-project-lead (10 issues, 4-FASE plan)</li>
+                        <li>Documentación: 14 archivos de memoria + 2 notas Obsidian</li>
+                        <li>Landing page bootstrap + GitHub Pages</li>
+                        <li>Sync a claudemem repository</li>
+                    </ul>
+                    <p><strong>Métricas:</strong> 173 módulos analizados, 11 categorías, 45 tests (26%), 850 LOC duplicado</p>
+                </div>
+            </div>
+
+            <div class="log-entry">
+                <div class="log-date">2026-07-11</div>
+                <div class="log-title">Sesión 2: Restructuración de Memoria (Diary Format)</div>
+                <div class="log-meta">Control + Historial → Diario + Changelog + Decisiones + TODO</div>
+                <div class="mt-2">
+                    <p><strong>Objetivo:</strong> Reorganizar memoria como diary de trabajo, no auditoría de problemas</p>
+                    <p><strong>Archivos creados:</strong></p>
+                    <ul>
+                        <li>DIARIO.md — Log de sesiones (qué se hizo, hallazgos)</li>
+                        <li>CHANGELOG.md — Historial de cambios por fecha/categoría</li>
+                        <li>DECISIONES.md — 10 decisiones arquitectónicas con contexto e impacto</li>
+                        <li>TODO.md — FASE 1-4 roadmap con tareas checklist</li>
+                    </ul>
+                    <p><strong>GitHub Sync:</strong> Commit 1527fca pushed → https://github.com/areyesdr/claudemem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAMBIOS SECTION -->
+    <section class="section bg-white" id="cambios">
+        <div class="container">
+            <h2 class="section-title">📋 Cambios Recientes</h2>
 
             <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-danger text-white">
-                            <h5 class="mb-0">🔴 Problemas Críticos</h5>
-                        </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold bg-info text-white">2026-07-10</div>
                         <div class="card-body">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><strong>l10n_sv_hr:</strong> 1 test en hub payroll (9 deps) — LEGAL RISK</li>
-                                <li class="mb-2"><strong>Tax reporting:</strong> 14 módulos interdependientes, ciclos circulares</li>
-                                <li class="mb-2"><strong>Operating units:</strong> 8 módulos, 200+ LOC duplicado</li>
-                                <li class="mb-2"><strong>Check printing:</strong> 5 variantes, consolidation candidate</li>
-                                <li><strong>Empty modules:</strong> 7 stubs sin funcionalidad</li>
+                            <p><strong>11 Categorías analizadas:</strong></p>
+                            <ul class="small">
+                                <li>l10n_sv_edi: 15 módulos, 6 tests</li>
+                                <li>l10n_sv_account: 58 módulos, 33 tests</li>
+                                <li>l10n_sv_hr: 21 módulos, 1 test ⚠️</li>
+                                <li>l10n_sv_stock: 25 módulos, 2 tests</li>
+                                <li>+ 7 categorías más (100 módulos)</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-header bg-success text-white">
-                            <h5 class="mb-0">✅ Oportunidades Quick Wins</h5>
-                        </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold bg-info text-white">2026-07-10</div>
                         <div class="card-body">
-                            <table class="table table-sm">
-                                <tr>
-                                    <td><strong>Delete stubs</strong></td>
-                                    <td><span class="badge bg-success">1h</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Consolidate checks</strong></td>
-                                    <td><span class="badge bg-success">4h</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Remove empty views</strong></td>
-                                    <td><span class="badge bg-success">6h</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Create helpers</strong></td>
-                                    <td><span class="badge bg-success">3h</span></td>
-                                </tr>
-                                <tr class="fw-bold">
-                                    <td>Total</td>
-                                    <td><span class="badge bg-warning">14 horas</span></td>
-                                </tr>
-                            </table>
+                            <p><strong>Deuda Técnica Identificada:</strong></p>
+                            <ul class="small">
+                                <li>7 módulos vacíos (stubs)</li>
+                                <li>3 ciclos de dependencias circulares</li>
+                                <li>850 LOC código duplicado (12%)</li>
+                                <li>127 módulos sin tests (74%)</li>
+                                <li>Plan de acción: 4-FASES (19 días)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold bg-warning text-dark">2026-07-11</div>
+                        <div class="card-body">
+                            <p><strong>Estructuras de Memoria Creadas:</strong></p>
+                            <ul class="small">
+                                <li>DIARIO.md — Log de sesiones</li>
+                                <li>CHANGELOG.md — Historial por fecha/módulo</li>
+                                <li>DECISIONES.md — 10 decisiones con impacto</li>
+                                <li>TODO.md — 4-FASES con tareas checklist</li>
+                                <li>MEMORY.md — Hub actualizado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header fw-bold bg-success text-white">2026-07-11</div>
+                        <div class="card-body">
+                            <p><strong>Landing Page & Sync:</strong></p>
+                            <ul class="small">
+                                <li>Actualizada landing page (diary focus)</li>
+                                <li>Sync a https://github.com/areyesdr/claudemem</li>
+                                <li>GitHub Pages: https://areyesdr.github.io/claudemem/</li>
+                                <li>Commit 1527fca con 5 archivos nuevos</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -270,7 +347,7 @@
     </section>
 
     <!-- CATEGORIAS SECTION -->
-    <section class="section bg-white" id="categorias">
+    <section class="section" id="categorias">
         <div class="container">
             <h2 class="section-title">📂 Categorías de Módulos</h2>
 
@@ -357,128 +434,10 @@
         </div>
     </section>
 
-    <!-- DEUDA TECNICA SECTION -->
-    <section class="section" id="deuda">
-        <div class="container">
-            <h2 class="section-title">⚡ Deuda Técnica Identificada</h2>
-
-            <div class="accordion" id="debtAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#debt1">
-                            <span class="badge badge-critical me-2">P0</span> Módulos Vacíos (7 stubs)
-                        </button>
-                    </h2>
-                    <div id="debt1" class="accordion-collapse collapse show" data-bs-parent="#debtAccordion">
-                        <div class="accordion-body">
-                            <p><strong>Problema:</strong> 7 módulos sin funcionalidad real.</p>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Módulo</th>
-                                        <th>Python</th>
-                                        <th>Acción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>sale_access_right</td><td>0</td><td>DELETE</td></tr>
-                                    <tr><td>l10n_sv_edi_attachment_downloader</td><td>0</td><td>DELETE</td></tr>
-                                    <tr><td>l10n_sv_pos_invoice</td><td>0</td><td>DELETE</td></tr>
-                                    <tr><td>account_move_change_account</td><td>0</td><td>DELETE</td></tr>
-                                    <tr><td>account_move_change_dates</td><td>1</td><td>DELETE</td></tr>
-                                    <tr><td>pos_discount_validation</td><td>minimal</td><td>DELETE</td></tr>
-                                    <tr><td>config_utils_for_sv</td><td>0</td><td>DELETE</td></tr>
-                                </tbody>
-                            </table>
-                            <p class="mt-3"><strong>Effort:</strong> 1 día | <strong>Impact:</strong> Dead code elimination</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#debt2">
-                            <span class="badge badge-critical me-2">P0</span> Test Coverage Crítica (127 módulos)
-                        </button>
-                    </h2>
-                    <div id="debt2" class="accordion-collapse collapse" data-bs-parent="#debtAccordion">
-                        <div class="accordion-body">
-                            <p><strong>Problema:</strong> 74% de módulos sin tests. Crítico en hubs.</p>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Módulo</th>
-                                        <th>Tests</th>
-                                        <th>Dependientes</th>
-                                        <th>Risk</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td><strong>l10n_sv_hr_payroll</strong></td><td>0</td><td>9</td><td><span class="critical">CRÍTICA</span></td></tr>
-                                    <tr><td><strong>reporte_impuestos_sv</strong></td><td>0</td><td>8</td><td><span class="critical">CRÍTICA</span></td></tr>
-                                    <tr><td><strong>l10n_sv_stock_valuation</strong></td><td>0</td><td>7</td><td>ALTA</td></tr>
-                                    <tr><td>l10n_sv_operating_unit</td><td>0</td><td>8</td><td>ALTA</td></tr>
-                                    <tr><td>l10n_sv_edi_format_sv</td><td>1</td><td>15</td><td>ALTA</td></tr>
-                                </tbody>
-                            </table>
-                            <p class="mt-3"><strong>Effort:</strong> 4-5 días | <strong>Impact:</strong> Legal/compliance protection</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#debt3">
-                            <span class="badge badge-high me-2">P1</span> Duplicación de Código (12%, 850 LOC)
-                        </button>
-                    </h2>
-                    <div id="debt3" class="accordion-collapse collapse" data-bs-parent="#debtAccordion">
-                        <div class="accordion-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Patrón</th>
-                                        <th>Módulos</th>
-                                        <th>LOC Dup</th>
-                                        <th>Fix</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Check printing variants</td><td>5</td><td>79</td><td>1 día</td></tr>
-                                    <tr><td>Operating unit domains</td><td>8</td><td>200</td><td>Mixin 3-5d</td></tr>
-                                    <tr><td>Tax report helpers</td><td>14</td><td>150</td><td>1 día</td></tr>
-                                    <tr><td>Stock valuation</td><td>6</td><td>120</td><td>2 días</td></tr>
-                                    <tr><td>EDI format templates</td><td>9</td><td>180</td><td>2 días</td></tr>
-                                </tbody>
-                            </table>
-                            <p class="mt-3"><strong>Effort:</strong> 5 días | <strong>Impact:</strong> Maintainability</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#debt4">
-                            <span class="badge badge-high me-2">P1</span> Dependencias Circulares (3 ciclos)
-                        </button>
-                    </h2>
-                    <div id="debt4" class="accordion-collapse collapse" data-bs-parent="#debtAccordion">
-                        <div class="accordion-body">
-                            <p><strong>Ciclo 1:</strong> reporte_impuestos ↔ impuestos_sugeridos ↔ valida_reporte</p>
-                            <p><strong>Ciclo 2:</strong> l10n_sv_stock_valuation ↔ account_valuation_sv</p>
-                            <p><strong>Ciclo 3:</strong> [otros]</p>
-                            <p class="mt-3"><strong>Effort:</strong> 3-5 días | <strong>Impact:</strong> Architecture stability</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ROADMAP SECTION -->
     <section class="section bg-white" id="roadmap">
         <div class="container">
-            <h2 class="section-title">🎯 Roadmap de Implementación</h2>
+            <h2 class="section-title">🎯 Roadmap de Implementación (FASE 1-4)</h2>
 
             <div class="row">
                 <div class="col-md-3 mb-4">
@@ -488,12 +447,12 @@
                             <small>Week 1 — 5 días</small>
                         </div>
                         <div class="card-body">
-                            <h6>Tests Foundation</h6>
+                            <h6>Tests Críticos</h6>
                             <ul class="small">
-                                <li>Tests l10n_sv_edi</li>
-                                <li>Tests operating_unit</li>
-                                <li>Tests check_printing</li>
-                                <li>Integration tests</li>
+                                <li>Tests l10n_sv_edi (MH, sig)</li>
+                                <li>Tests l10n_sv_hr (payroll)</li>
+                                <li>Tests l10n_sv_stock (AVCO)</li>
+                                <li>Multi-tenancy tests</li>
                             </ul>
                         </div>
                     </div>
@@ -508,10 +467,10 @@
                         <div class="card-body">
                             <h6>Quick Wins Cleanup</h6>
                             <ul class="small">
-                                <li>Delete 7 stubs (1h)</li>
-                                <li>Consolidate checks (4h)</li>
-                                <li>Remove views (6h)</li>
-                                <li>Create helpers (3h)</li>
+                                <li>Delete 7 stubs</li>
+                                <li>Consolidate checks (5→1)</li>
+                                <li>Remove 390 views</li>
+                                <li>Extract l10n_sv_helpers</li>
                             </ul>
                         </div>
                     </div>
@@ -524,12 +483,12 @@
                             <small>Week 3-4 — 5 días</small>
                         </div>
                         <div class="card-body">
-                            <h6>Architecture Refactor</h6>
+                            <h6>Refactoring Arquitectura</h6>
                             <ul class="small">
-                                <li>OperatingUnitMixin</li>
-                                <li>Break circular deps</li>
-                                <li>Extract helpers</li>
-                                <li>Consolidate duplicates</li>
+                                <li>OperatingUnitMixin (8→3)</li>
+                                <li>Break circular deps (3)</li>
+                                <li>Consolidate tax methods</li>
+                                <li>Unify code patterns</li>
                             </ul>
                         </div>
                     </div>
@@ -539,7 +498,7 @@
                     <div class="card h-100 border-start border-4" style="border-color: #10b981;">
                         <div class="card-header bg-success text-white">
                             <h5 class="mb-0">FASE 4</h5>
-                            <small>Month 2+ — 5-7 días</small>
+                            <small>Month 2+ — 7 días</small>
                         </div>
                         <div class="card-body">
                             <h6>SQL → ORM Migration</h6>
@@ -547,7 +506,7 @@
                                 <li>Audit 406 queries</li>
                                 <li>HIGH-RISK first</li>
                                 <li>Add ORM tests</li>
-                                <li>Documentation</li>
+                                <li>Verify data integrity</li>
                             </ul>
                         </div>
                     </div>
@@ -555,74 +514,73 @@
             </div>
 
             <div class="alert alert-info mt-4">
-                <strong>Total estimate:</strong> 16-17 días repartidos en Q1-Q3 2026
+                <strong>Total estimate:</strong> 19 días repartidos en Q1-Q3 2026
             </div>
         </div>
     </section>
 
-    <!-- SEARCH SECTION -->
-    <section class="section" id="search">
+    <!-- DECISIONES SECTION -->
+    <section class="section" id="decisiones">
         <div class="container">
-            <h2 class="section-title">🔍 Búsqueda Rápida por Problema</h2>
+            <h2 class="section-title">🎯 Decisiones Arquitectónicas</h2>
 
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-header fw-bold">Payroll está roto</div>
-                        <div class="card-body">
-                            <p class="card-text small">Riesgo: CRITICAL (0 tests, legal)</p>
-                            <p class="card-text small">Ver: Categoría l10n_sv_hr</p>
-                            <p class="card-text small">Acción: FASE 1 — Agregar tests</p>
+            <div class="accordion" id="decisionsAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dec1">
+                            <span class="badge badge-primary me-2">D1</span> Memoria: De Auditoría → Diario
+                        </button>
+                    </h2>
+                    <div id="dec1" class="accordion-collapse collapse show" data-bs-parent="#decisionsAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Decisión:</strong> Cambiar modelo de memoria de "análisis crítico" a "diario de control"</p>
+                            <p><strong>Por qué:</strong> Memoria requiere historial de cambios y control, no auditoría de qué anda mal</p>
+                            <p><strong>Implementación:</strong> DIARIO.md + CHANGELOG.md + DECISIONES.md + TODO.md</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-header fw-bold">Valuación inconsistente</div>
-                        <div class="card-body">
-                            <p class="card-text small">Riesgo: Circular deps, 0 tests</p>
-                            <p class="card-text small">Ver: Categoría l10n_sv_stock</p>
-                            <p class="card-text small">Acción: FASE 1 — Tests + break deps</p>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dec2">
+                            <span class="badge badge-primary me-2">D2</span> Organización: Por Categoría (11) vs Por Módulo (173)
+                        </button>
+                    </h2>
+                    <div id="dec2" class="accordion-collapse collapse" data-bs-parent="#decisionsAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Decisión:</strong> Crear 11 archivos por categoría en lugar de 173 por módulo</p>
+                            <p><strong>Alternativa rechazada:</strong> 173 módulos individuales (ruido excesivo)</p>
+                            <p><strong>Beneficio:</strong> Fácil de navegar, granularidad correcta, escalable</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-header fw-bold">Facturación EDI falla</div>
-                        <div class="card-body">
-                            <p class="card-text small">Riesgo: Gov compliance</p>
-                            <p class="card-text small">Ver: Categoría l10n_sv_edi</p>
-                            <p class="card-text small">Acción: FASE 1 — MH integration tests</p>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dec3">
+                            <span class="badge badge-primary me-2">D3</span> Priorización FASE 1: Tests vs Quick Wins
+                        </button>
+                    </h2>
+                    <div id="dec3" class="accordion-collapse collapse" data-bs-parent="#decisionsAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Decisión:</strong> FASE 1 = Tests en hubs críticos, NO quick wins</p>
+                            <p><strong>Por qué:</strong> Riesgo legal (payroll, compliance) > deuda técnica cosmética</p>
+                            <p><strong>Orden:</strong> FASE 1 tests → FASE 2 quick wins → FASE 3 refactor → FASE 4 SQL</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-header fw-bold">Data leakage multi-tenancy</div>
-                        <div class="card-body">
-                            <p class="card-text small">Riesgo: Security, 0 tests</p>
-                            <p class="card-text small">Ver: Categoría l10n_sv_utils</p>
-                            <p class="card-text small">Acción: FASE 1 — Multi-tenancy tests</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-header fw-bold">Código duplicado</div>
-                        <div class="card-body">
-                            <p class="card-text small">850 LOC duplicado (12%)</p>
-                            <p class="card-text small">Ver: Deuda Técnica → Duplicación</p>
-                            <p class="card-text small">Acción: FASE 2-3 — Consolidation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-header fw-bold">No sé por dónde empezar</div>
-                        <div class="card-body">
-                            <p class="card-text small">Quick wins: 14 horas, bajo riesgo</p>
-                            <p class="card-text small">Ver: Roadmap → FASE 2</p>
-                            <p class="card-text small">Acción: Empieza eliminando stubs</p>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dec4">
+                            <span class="badge badge-primary me-2">D4</span> SQL Migration: HIGH-RISK Primero
+                        </button>
+                    </h2>
+                    <div id="dec4" class="accordion-collapse collapse" data-bs-parent="#decisionsAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Decisión:</strong> Migrar HIGH-RISK (account_move, stock) antes que LOW-RISK</p>
+                            <p><strong>Alternativa rechazada:</strong> LOW→HIGH (bajo impacto primero)</p>
+                            <p><strong>Motivo:</strong> Financial data corruption > low-risk cleanup</p>
                         </div>
                     </div>
                 </div>
@@ -633,13 +591,18 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p class="mb-2"><strong>Odoo 17 Localizacion Analysis</strong></p>
+            <p class="mb-2"><strong>Odoo 17 Localizacion — Diario de Trabajo</strong></p>
             <p class="small mb-0">
-                Análisis generado: 2026-07-10 | Memorias:
-                <a href="https://github.com/areyesdr/claudemem" style="color: #93c5fd;">github.com/areyesdr/claudemem</a>
+                Memorias:
+                <a href="https://github.com/areyesdr/claudemem/tree/main/memories" style="color: #93c5fd;">
+                    github.com/areyesdr/claudemem/memories
+                </a>
+            </p>
+            <p class="small mb-0">
+                Archivos: DIARIO.md • CHANGELOG.md • DECISIONES.md • TODO.md • INDEX.md
             </p>
             <p class="small">
-                Generado por caveman:cavecrew-investigator + odoo-project-lead
+                Actualizado: 2026-07-11 | Sesiones: 2 | Commits: 1527fca
             </p>
         </div>
     </footer>
