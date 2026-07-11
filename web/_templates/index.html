@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Memory Vault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>📚 Claude Memory Vault</h1>
+            <p class="subtitle" id="subtitle">Memorias Persistentes</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="total-count">-</span>
+                <span class="stat-label">Memorias</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label" id="update-time">Cargando...</span>
+            </div>
+        </section>
+
+        <section class="search-bar">
+            <input type="text" id="search" placeholder="Buscar memoria...">
+        </section>
+
+        <section class="filters" id="filters"></section>
+
+        <section class="memories-grid" id="memories"></section>
+    </main>
+
+    <footer class="footer">
+        <p>📌 <a href="https://github.com/areyesdr/claudemem">GitHub</a> |
+           🏠 <a href="https://github.com/areyesdr/claudemem/tree/main/memories">Memorias</a></p>
+        <p style="font-size: 0.9em; color: #666;" id="footer-info">Auto-generado</p>
+    </footer>
+
+    <script>
+        // Carga dinámica desde memories.json
+        let allMemories = [];
+        let currentFilter = '*';
+
+        async function loadMemories() {
+            try {
+                const res = await fetch('memories.json');
+                allMemories = await res.json();
+                render();
+            } catch (e) {
+                console.error('Error cargando memories.json:', e);
+            }
+        }
+
+        function getUniqueProjects() {
+            return ['*', ...new Set(allMemories.map(m => m.project))];
+        }
+
+        function getTypeColors() {
+            return new Map([
+                ['◆ Proyecto', '#7c3aed'],
+                ['● Bug', '#dc2626'],
+                ['⚖ Feedback', '#d97706'],
+                ['📋 Referencia', '#1e40af'],
+                ['↻ Workflow', '#059669']
+            ]);
+        }
+
+        function renderFilters() {
+            const container = document.getElementById('filters');
+            const projects = getUniqueProjects();
+
+            container.innerHTML = projects.map(proj => `
+                <button class="filter-btn ${proj === '*' ? 'active' : ''}"
+                        data-filter="${proj}">
+                    ${proj === '*' ? 'Todos' : proj}
+                </button>
+            `).join('');
+
+            container.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    renderCards();
+                });
+            });
+        }
+
+        function renderCards() {
+            const container = document.getElementById('memories');
+            const query = document.getElementById('search').value.toLowerCase();
+
+            const filtered = allMemories.filter(m => {
+                const matchesSearch = m.title.toLowerCase().includes(query) ||
+                                     m.desc.toLowerCase().includes(query);
+                const matchesFilter = currentFilter === '*' || m.project === currentFilter;
+                return matchesSearch && matchesFilter;
+            });
+
+            container.innerHTML = filtered.map(m => `
+                <article class="memory-card" data-id="${m.id}" data-project="${m.project}">
+                    <div class="card-header">
+                        <span class="type-badge">${m.type}</span>
+                        <span class="project-tag">${m.project}</span>
+                        <span class="card-date">${m.date}</span>
+                    </div>
+                    <h3 class="card-title">${escapeHtml(m.title)}</h3>
+                    <p class="card-desc">${escapeHtml(m.desc)}</p>
+                    <footer class="card-footer">
+                        <a href="#" class="card-link">Ver detalles →</a>
+                    </footer>
+                </article>
+            `).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function render() {
+            // Stats
+            document.getElementById('total-count').textContent = allMemories.length;
+            document.getElementById('update-time').textContent =
+                `Actualizado: ${new Date().toLocaleDateString()}`;
+
+            // Subtitle dinámico
+            const projCount = new Set(allMemories.map(m => m.project)).size;
+            document.getElementById('subtitle').textContent =
+                `${allMemories.length} memorias de ${projCount} proyecto(s)`;
+
+            // Filtros dinámicos
+            renderFilters();
+
+            // Cards
+            renderCards();
+
+            // Search
+            document.getElementById('search').addEventListener('input', renderCards);
+        }
+
+        // Load al abrir
+        loadMemories();
+    </script>
+</body>
+</html>

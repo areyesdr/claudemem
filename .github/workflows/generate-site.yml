@@ -1,0 +1,47 @@
+name: Generate Claude Memory Web
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Generate Site
+        run: |
+          python3 web/_scripts/generate-site.py
+
+      - name: Commit & Push (si hay cambios)
+        run: |
+          cd web/docs
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "Claude Memory Bot"
+            git config user.email "claudememory@bot.local"
+            git add -A
+            git commit -m "chore: actualización automática de web ($(date '+%Y-%m-%d %H:%M'))"
+            git push
+          else
+            echo "✓ Sin cambios en web"
+          fi
+
+      - name: Deploy to Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: 'web/docs'
+
+      - name: Deploy Pages
+        uses: actions/deploy-pages@v2

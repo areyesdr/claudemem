@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} - Claude Memory Vault</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="back-link">← Volver</a>
+            <h1>📚 Claude Memory Vault</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="memory-detail">
+            <div class="detail-header">
+                <span class="type-badge">{type_badge}</span>
+                <span class="detail-date">{date}</span>
+            </div>
+
+            <h1 class="detail-title">{title}</h1>
+            <p class="detail-desc">{desc}</p>
+
+            <div class="detail-body">
+                {body}
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>📌 <a href="https://github.com/areyesdr/claudemem">GitHub</a> |
+           🏠 <a href="https://github.com/areyesdr/claudemem/tree/main/memories">Memorias</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,353 @@
+[
+  {
+    "id": "fast_track_memory_error_fix",
+    "file": "bugs_fast_track_memory_error.md",
+    "project": "odoo-17",
+    "title": "fast_track_memory_error_fix",
+    "desc": "MemoryError en cron_fast_track_invoices después de ~230 órdenes, solucionado con limpieza periódica de cache",
+    "type": "◆ Otros",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Fast-Track Taxes Company Validation",
+    "file": "bugs_fast_track_taxes_company.md",
+    "project": "odoo-17",
+    "title": "Fast-Track Taxes Company Validation",
+    "desc": "Filtrado de impuestos por compañía para evitar error de validación nativa",
+    "type": "● Bug",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Fast-Track Taxes Company Validation (Multicompany Fix)",
+    "file": "bugs_fast_track_taxes_multicompany.md",
+    "project": "odoo-17",
+    "title": "Fast-Track Taxes Company Validation (Multicompany Fix)",
+    "desc": "Filtrado de impuestos con fallback automático para evitar error de validación nativa",
+    "type": "● Bug",
+    "date": "sin fecha"
+  },
+  {
+    "id": "libro_iva_count Fix",
+    "file": "bugs_libro_iva_count_fix_20260507.md",
+    "project": "odoo-17",
+    "title": "libro_iva_count Fix",
+    "desc": "Campo computado queda amarrado en borrador, solucionado con filtro de estado + invalidación de cache",
+    "type": "⚖ Feedback",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Picking State Dancing Bug Fix",
+    "file": "bugs_picking_state_dancing_20260504.md",
+    "project": "odoo-17",
+    "title": "Picking State Dancing Bug Fix",
+    "desc": "Crítico - Fix para orden saltando entre estados de albarán sin avanzar",
+    "type": "◆ Otros",
+    "date": "sin fecha"
+  },
+  {
+    "id": "bugs_refund_codigo_generacion_duplicate",
+    "file": "bugs_refund_codigo_generacion_duplicate.md",
+    "project": "odoo-17",
+    "title": "bugs_refund_codigo_generacion_duplicate",
+    "desc": "Fix para codigo_generacion duplicado en creación de refund desde orden anulada - 2026-05-14",
+    "type": "◆ Otros",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Usar vault de Obsidian como histórico",
+    "file": "feedback_vault_as_memory.md",
+    "project": "odoo-17",
+    "title": "Usar vault de Obsidian como histórico",
+    "desc": "Cada versión de Odoo tiene su propio vault con el nombre vault{version}; consultar el del proyecto activo",
+    "type": "⚖ Feedback",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Git Workflow Rules",
+    "file": "git_workflow_rules.md",
+    "project": "odoo-17",
+    "title": "Git Workflow Rules",
+    "desc": "Reglas estrictas sobre operaciones de git en el proyecto Odoo 17",
+    "type": "⚖ Feedback",
+    "date": "sin fecha"
+  },
+  {
+    "id": "action_cleanup_bad_invoices_only - Soporte Fast-Track",
+    "file": "project_action_cleanup_invoices_fast_track.md",
+    "project": "odoo-17",
+    "title": "action_cleanup_bad_invoices_only - Soporte Fast-Track",
+    "desc": "Función de limpieza de facturas ahora soporta órdenes sin SO y fast-track",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "audit_state_fix_anulation_detection",
+    "file": "project_audit_state_fix_anulation_detection.md",
+    "project": "odoo-17",
+    "title": "audit_state_fix_anulation_detection",
+    "desc": "Detección de órdenes anuladas en action_audit_state_fix() - 2026-05-14",
+    "type": "◆ Otros",
+    "date": "sin fecha"
+  },
+  {
+    "id": "bi_bulk_advanced_confirm Module Implementation",
+    "file": "project_bi_bulk_advanced_confirm.md",
+    "project": "odoo-17",
+    "title": "bi_bulk_advanced_confirm Module Implementation",
+    "desc": "Módulo avanzado para bulk operations con auto-fill y force-validate",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "claudemem_github_setup",
+    "file": "project_claudemem_github_setup.md",
+    "project": "odoo-17",
+    "title": "claudemem_github_setup",
+    "desc": "Setup de repositorio GitHub para memorias persistentes - areyesdr/claudemem",
+    "type": "◆ Otros",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Code Documentation - SE USA EN Comments",
+    "file": "project_code_documentation_se_usa_en.md",
+    "project": "odoo-17",
+    "title": "Code Documentation - SE USA EN Comments",
+    "desc": "Documentación exhaustiva de uso de funciones en sync_amigopos (2026-04-30)",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Dashboard Bus Optimization",
+    "file": "project_dashboard_bus_optimization.md",
+    "project": "odoo-17",
+    "title": "Dashboard Bus Optimization",
+    "desc": "Log buffer en memoria (sin JSONL) + cards via bus con validación inteligente de rango",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Módulo l10n_sv_dte",
+    "file": "project_l10n_sv_dte.md",
+    "project": "odoo-17",
+    "title": "Módulo l10n_sv_dte",
+    "desc": "Nuevo módulo de facturación electrónica DTE para El Salvador, arquitectura modular, independiente de l10n_sv_edi",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Unificación _fetch_mh_seal_syncap + action_query_mh_syncap",
+    "file": "project_mh_seal_unification_20260505.md",
+    "project": "odoo-17",
+    "title": "Unificación _fetch_mh_seal_syncap + action_query_mh_syncap",
+    "desc": "Fusión de funciones de consulta MH + integración en flujo de creación de facturas",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "MO & PICKING Optimization",
+    "file": "project_mo_picking_optimization.md",
+    "project": "odoo-17",
+    "title": "MO & PICKING Optimization",
+    "desc": "Reintentos exponenciales para evitar deadlocks en stock.quant",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Necesidades de Producción Agrupadas por Sucursal",
+    "file": "project_obtener_necesidades_sucursal_20260507.md",
+    "project": "odoo-17",
+    "title": "Necesidades de Producción Agrupadas por Sucursal",
+    "desc": "obtener_necesidades_del_dia() refactorizada para agrupar correctamente por sucursal+producto",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Skill Odoo SV Dev",
+    "file": "project_odoo_sv_dev_skill.md",
+    "project": "odoo-17",
+    "title": "Skill Odoo SV Dev",
+    "desc": "Skill creada para desarrollo Odoo 17 con localización El Salvador EDI, basada en análisis completo del repo l10n_sv_edi",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Order Form View Redesign",
+    "file": "project_order_form_redesign_20260504.md",
+    "project": "odoo-17",
+    "title": "Order Form View Redesign",
+    "desc": "Vista sync_amigopos mejorada con secciones visuales, cajas de color y mejor jerarquía de campos",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Orquestador Maestro - Secuencia Estricta",
+    "file": "project_orquestador_secuencial.md",
+    "project": "odoo-17",
+    "title": "Orquestador Maestro - Secuencia Estricta",
+    "desc": "Reescritura de cron_process_syncap_orders con garantía de precedencias",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "po_reverse_custom_date_implementation",
+    "file": "project_po_reverse_custom_date.md",
+    "project": "odoo-17",
+    "title": "po_reverse_custom_date_implementation",
+    "desc": "Implementación completada de fecha personalizada en PO reverse workflow",
+    "type": "◆ Otros",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Query MH from Invoice",
+    "file": "project_query_mh_invoice.md",
+    "project": "odoo-17",
+    "title": "Query MH from Invoice",
+    "desc": "Funciones para consultar sello de Hacienda desde account.move con botón",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "SQL Multiple Queries Fix",
+    "file": "project_sql_multiple_queries_fix.md",
+    "project": "odoo-17",
+    "title": "SQL Multiple Queries Fix",
+    "desc": "PostgreSQL no permite múltiples sentencias SQL en un único execute()",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "sync_amigopos Baseline (Frozen)",
+    "file": "project_sync_amigopos_baseline.md",
+    "project": "odoo-17",
+    "title": "sync_amigopos Baseline (Frozen)",
+    "desc": "Estado congelado del módulo sync_amigopos v17.0.1.1 a 2026-04-29 — versión de referencia",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Bulk Operations Integradas en sync_amigopos (20260503)",
+    "file": "project_sync_amigopos_bulk_operations_20260503.md",
+    "project": "odoo-17",
+    "title": "Bulk Operations Integradas en sync_amigopos (20260503)",
+    "desc": "Integración de lógica bulk (confirmar SO/MO/pickings) desde l10n_sv_bulk_confirm_orders",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "sync_amigopos Integridad Final (v17.0.1.2-FINAL)",
+    "file": "project_sync_amigopos_integridad_final_20260503.md",
+    "project": "odoo-17",
+    "title": "sync_amigopos Integridad Final (v17.0.1.2-FINAL)",
+    "desc": "7 cambios aplicados para 100% integridad, trazabilidad, compliance y validaciones dinámicas",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "sync_amigopos Post-Deployment Status",
+    "file": "project_sync_amigopos_status.md",
+    "project": "odoo-17",
+    "title": "sync_amigopos Post-Deployment Status",
+    "desc": "Estado de implementación completa de reparación MO→Picking→Factura y auditorías",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "sync_amigopos Invoice Unique Constraint Fix — v2 Rollback + Simple Fix",
+    "file": "project_sync_invoice_batch_v2.md",
+    "project": "odoo-17",
+    "title": "sync_amigopos Invoice Unique Constraint Fix — v2 Rollback + Simple Fix",
+    "desc": "Reverted complex batch optimization, implemented simple pre-write validation (2026-04-30)",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Unique Codigo Generación - Fix",
+    "file": "project_unique_codigo_generacion.md",
+    "project": "odoo-17",
+    "title": "Unique Codigo Generación - Fix",
+    "desc": "Solución al error de duplicate unique constraint en codigo_generacion de facturas DTE",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "wkhtmlt2pdf_batch_fix",
+    "file": "project_wkhtmlt2pdf_batch_fix.md",
+    "project": "odoo-17",
+    "title": "wkhtmlt2pdf_batch_fix",
+    "desc": "Corrección de integración del módulo wkhtmlt2pdf_batch con account_reports",
+    "type": "◆ Otros",
+    "date": "sin fecha"
+  },
+  {
+    "id": "bi_bulk_confirm_and_cancel Module Reference",
+    "file": "reference_bi_bulk_confirm_and_cancel.md",
+    "project": "odoo-17",
+    "title": "bi_bulk_confirm_and_cancel Module Reference",
+    "desc": "Módulo BrowseInfo de utilidad para confirmar y cancelar órdenes en bulk",
+    "type": "📋 Referencia",
+    "date": "sin fecha"
+  },
+  {
+    "id": "commit_documentation_workflow",
+    "file": "workflow_commit_documentation.md",
+    "project": "odoo-17",
+    "title": "commit_documentation_workflow",
+    "desc": "Flujo obligatorio de documentación antes de cada commit en módulos Odoo 17",
+    "type": "◆ Otros",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Hotel modules stack v19",
+    "file": "project_hotel_modules.md",
+    "project": "odoo-19",
+    "title": "Hotel modules stack v19",
+    "desc": "Stack de módulos Hotel en Odoo 19 — arquitectura, flujos y ubicación de docs",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "Migración l10n_sv_pruebas_mh v17→v19",
+    "file": "project_pruebas_mh_migration.md",
+    "project": "odoo-19",
+    "title": "Migración l10n_sv_pruebas_mh v17→v19",
+    "desc": "Estado y decisiones de diseño de la migración del módulo de pruebas MH a Odoo 19",
+    "type": "◆ Proyecto",
+    "date": "sin fecha"
+  },
+  {
+    "id": "memory_error_fast_track_v2_optimization",
+    "file": "bugs_memory_error_fast_track_v2.md",
+    "project": "odoo-17",
+    "title": "memory_error_fast_track_v2_optimization",
+    "desc": "Optimizaciones v2 para MemoryError en cron_fast_track_invoices - Pre-carga SQL + limpieza agresiva",
+    "type": "◆ Otros",
+    "date": "2026-05-19"
+  },
+  {
+    "id": "bugs_reset_order_sql_column_fix",
+    "file": "bugs_reset_order_sql_column_fix.md",
+    "project": "odoo-17",
+    "title": "bugs_reset_order_sql_column_fix",
+    "desc": "Fix para error de nombre de columna SQL en reset_order() - ticketid case sensitivity",
+    "type": "◆ Otros",
+    "date": "2026-05-14"
+  },
+  {
+    "id": "Propinas no se procesaban en SO",
+    "file": "bugs_syncap_order_line_tips_missing.md",
+    "project": "odoo-17",
+    "title": "Propinas no se procesaban en SO",
+    "desc": "Bug en cron_process_syncap_orders_line - dominio excluía is_tip y is_discount",
+    "type": "● Bug",
+    "date": "2026-05-13"
+  },
+  {
+    "id": "sync_state_running_integration_20260513",
+    "file": "project_sync_state_running_20260513.md",
+    "project": "odoo-17",
+    "title": "sync_state_running_integration_20260513",
+    "desc": "Integración de estado syncap_sync_running en los 4 crons de sync_amigopos",
+    "type": "◆ Otros",
+    "date": "2026-05-13"
+  }
+]
