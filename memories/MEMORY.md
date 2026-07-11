@@ -1,6 +1,17 @@
 - [📋 Workflow: Documentación en Commits](workflow_commit_documentation.md) — **OBLIGATORIO**: Antes de cada commit, actualizar README módulo + repo, incrementar versión
 - [Vault como histórico](feedback_vault_as_memory.md) — Siempre consultar el vault de Obsidian para contexto histórico del proyecto
 - [Git Workflow Rules](git_workflow_rules.md) — **CRÍTICO**: Git es SOLO lectura, nunca hacer commits/push automáticos
+
+## Proyecto Localizacion: Diarios, Roadmap e Índices
+
+- [📔 Diario de Trabajo](DIARIO.md) — Sesiones de trabajo con fecha, qué se hizo, hallazgos, métricas
+- [📋 Changelog Módulos](CHANGELOG.md) — Historial de cambios por categoría, ordenado por fecha
+- [🎯 Decisiones Arquitectónicas](DECISIONES.md) — 10 decisiones críticas con contexto, alternativas e impacto
+- [📝 TODO Roadmap](TODO.md) — FASE 1-4, tareas checklist por categoría, esfuerzo estimado, prioridades
+- [📑 Índice Maestro](INDEX.md) — Hub central: búsqueda rápida, categorías, 6 búsquedas por problema
+
+## Proyectos Anteriores
+
 - [Skill Odoo SV Dev](project_odoo_sv_dev_skill.md) — Skill creada en ~/.claude/skills/odoo-sv-dev/ con patrones de l10n_sv_edi v17.10.29
 - [Módulo l10n_sv_dte](project_l10n_sv_dte.md) — Nuevo módulo DTE El Salvador en /l10n_sv_edi/l10n_sv_dte/, reemplaza l10n_sv_edi con arquitectura modular
 - [sync_amigopos Status](project_sync_amigopos_status.md) — MO→Picking→Factura workflow reparado, auditorías implementadas, testing documentado (2026-04-28)
